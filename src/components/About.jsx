@@ -85,6 +85,7 @@ const About = () => {
                   className="inline-block w-[60px] h-[60px] rounded-full max-w-full"
                   src={testimonial.avatar}
                   alt={testimonial.name}
+                  loading="lazy"
                 />
                 <p className="mb-[30px] text-left">{testimonial.quote}</p>
 

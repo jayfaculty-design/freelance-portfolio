@@ -16,7 +16,8 @@ const Home = () => {
           <img
             className=" object-cover rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3"
             src="/avator.png"
-            alt=""
+            alt="Godfred"
+            loading="lazy"
           />
         </div>
         <h2 className="text-heading-color text-[40px] font-medium leading-tight">

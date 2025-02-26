@@ -24,6 +24,7 @@ const Portfolio = () => {
                 className="py-10 bg-white"
                 src={project.image}
                 alt={project.name}
+                loading="lazy"
               />
               <div className="px-5 py-5">
                 <h1 className="text-left font-poppins">{project.category}</h1>
