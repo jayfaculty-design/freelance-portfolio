@@ -29,7 +29,7 @@ const Portfolio = () => {
             >
               <div className="relative w-full h-[200px]">
                 {!imageLoad[project.id] && (
-                  <div className="absolute inset-0 bg-gray-300 animate-pulse rounded-full"></div>
+                  <div className="absolute inset-0 bg-gray-300 animate-pulse "></div>
                 )}
                 <img
                   className="py-10 bg-white h-[200px] object-cover w-full"
