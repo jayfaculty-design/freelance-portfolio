@@ -20,6 +20,7 @@ import { NavContext } from "../contexts/NavContext";
 
 const NavMenu = () => {
   const { isOpen, setIsOpen } = useContext(NavContext);
+  const [imageLoad, setImageLoad] = useState(false);
   return (
     <div
       className={`w-[70%] pl-5 pr-5 pt-5  py-10 flex flex-col fixed top-0 transition-all duration-300 ease-in-out ${
@@ -28,11 +29,15 @@ const NavMenu = () => {
     >
       <div className="flex flex-col gap-5 items-center justify-center">
         <div className="flex justify-center items-center w-[150px] h-[150px] p-2 bg-image-background rounded-full overflow-hidden relative">
+          {!imageLoad && (
+            <div className="absolute inset-0 bg-gray-300 animate-pulse rounded-full"></div>
+          )}
           <img
             className=" object-cover rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3"
             src="/avator.png"
             alt="Godfred"
             loading="lazy"
+            onLoad={() => setImageLoad(true)}
           />
         </div>
         <h1 className="text-[30px] font-bold text-white leading-[48px] text-center">

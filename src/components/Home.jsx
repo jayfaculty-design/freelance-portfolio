@@ -4,20 +4,25 @@ import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons/faLinkedinIn";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons/faXTwitter";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import Marquee from "react-fast-marquee";
 
 const Home = () => {
+  const [imageLoad, setImageLoad] = useState(false);
   return (
     <div className="p-5 mt-26">
       {/* content 1 */}
       <div className="text-center flex flex-col gap-5 items-center justify-center border border-card-background bg-card-background p-10 rounded-[20px]">
         <div className="flex justify-center items-center w-[300px] h-[300px] p-2 bg-image-background rounded-full overflow-hidden relative">
+          {!imageLoad && (
+            <div className="absolute inset-0 bg-gray-300 animate-pulse rounded-full"></div>
+          )}
           <img
             className=" object-cover rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3"
             src="/avator.png"
             alt="Godfred"
             loading="lazy"
+            onLoad={() => setImageLoad(true)}
           />
         </div>
         <h2 className="text-heading-color text-[40px] font-medium leading-tight">
