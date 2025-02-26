@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { testimonials } from "../data/data";
 
 const About = () => {
-  const [imageLoad, setImageLoad] = useState(false);
+  const [imageLoad, setImageLoad] = useState({});
+
+  const handleImageLoad = (id) => {
+    setImageLoad((prev) => ({
+      ...prev,
+      [id]: true,
+    }));
+  };
   return (
     <>
       <div className="p-5 mt-26">
@@ -82,16 +89,19 @@ const About = () => {
                 key={testimonial.id}
                 className="flex border border-border-color rounded-[16px] px-[20px] py-[20px] flex-col gap-5"
               >
-                {!imageLoad && (
-                  <div className="absolute inset-0 bg-gray-300 animate-pulse rounded-full"></div>
-                )}
-                <img
-                  className="inline-block w-[60px] h-[60px] rounded-full max-w-full"
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  loading="lazy"
-                  onLoad={() => setImageLoad(true)}
-                />
+                <div className="relative w-[60px] h-[60px]">
+                  {!imageLoad[testimonial.id] && (
+                    <div className="absolute inset-0 bg-gray-300 animate-pulse rounded-full"></div>
+                  )}
+                  <img
+                    className="inline-block w-[60px] h-[60px] rounded-full max-w-full"
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    loading="lazy"
+                    onLoad={() => handleImageLoad(testimonial.id)}
+                  />
+                </div>
+
                 <p className="mb-[30px] text-left">{testimonial.quote}</p>
 
                 <div className="flex flex-col gap-2 items-start">
