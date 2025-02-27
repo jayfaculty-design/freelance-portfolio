@@ -6,11 +6,12 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import Marquee from "react-fast-marquee";
+import Portfolio from "./Portfolio";
 
 const Home = () => {
   const [imageLoad, setImageLoad] = useState(false);
   return (
-    <div className="p-5 mt-26">
+    <div className="mt-26">
       {/* content 1 */}
       <div className="text-center flex flex-col gap-5 items-center justify-center border border-card-background bg-card-background p-10 rounded-[20px]">
         <div className="flex justify-center items-center w-[300px] h-[300px] p-2 bg-image-background rounded-full overflow-hidden relative">
@@ -97,6 +98,11 @@ const Home = () => {
             <p className="text-2xl ml-10 mt-1">Nanti</p>
           </div>
         </Marquee>
+      </div>
+
+      {/* Projects */}
+      <div className="-mt-20">
+        <Portfolio />
       </div>
     </div>
   );

@@ -26,6 +26,7 @@ body {
   color: var(--color-main-color);
   background-color: var(--color-body-background);
   scroll-behavior: smooth;
+  padding: 20px;
 }
 .servmark {
   font-family: var(--font-arsenal);

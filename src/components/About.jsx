@@ -12,7 +12,7 @@ const About = () => {
   };
   return (
     <>
-      <div className="p-5 mt-26">
+      <div className="mt-26">
         <div className="text-center flex flex-col gap-8 items-center justify-center border border-card-background bg-card-background px-5 py-10 rounded-[20px]">
           <h1 className="text-[34px] font-noto leading-[40px] font-bold text-white">
             <span className="font-medium text-main-color text-[18px]">

@@ -5,7 +5,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="p-5">
+    <div className="mt-10">
       <div className="text-center flex flex-col gap-5 items-center justify-center border border-card-background bg-card-background px-5 py-10 rounded-[20px]">
         <h1 className="text-heading-color text-[30px] font-poppins leading-[40px] w-72 font-normal mb-[5px] text-center">
           Excited to bring your project to life with a spark of innovation?

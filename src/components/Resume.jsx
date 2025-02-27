@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Resume = () => {
   return (
-    <div className="p-5 mt-26">
+    <div className="mt-26">
       <div className="text-center flex flex-col gap-5 items-center justify-center border border-card-background bg-card-background px-5 py-10 rounded-[20px]">
         {/* school and experience */}
         <div className="grid grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-3">
