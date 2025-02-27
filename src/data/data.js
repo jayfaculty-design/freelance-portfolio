@@ -1,4 +1,5 @@
 import {
+  faBootstrap,
   faCss3,
   faFigma,
   faGit,
@@ -99,7 +100,7 @@ export const skills = [
   },
   {
     id: 2,
-    name: "Node JS",
+    name: "Express Js",
     icon: faNodeJs,
   },
   {
@@ -120,8 +121,8 @@ export const skills = [
 
   {
     id: 6,
-    name: "Tailwind",
-    icon: "faTailwind",
+    name: "Bootstrap",
+    icon: faBootstrap,
   },
   {
     id: 7,
@@ -132,5 +133,19 @@ export const skills = [
     id: 8,
     name: "Figma",
     icon: faFigma,
+  },
+  {
+    id: 9,
+    name: "PostgreSQL",
+    icon: "postgresql",
+    isCustomIcon: true,
+    iconName: "postgresql",
+  },
+  {
+    id: 10,
+    name: "Tailwind",
+    icon: "tailwind",
+    isCustomIcon: true,
+    iconName: "tailwind",
   },
 ];

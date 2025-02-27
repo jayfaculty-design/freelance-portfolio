@@ -1,6 +1,7 @@
 import React from "react";
 import { education, experience, skills } from "../data/data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SiPostgresql, SiTailwindcss } from "@icons-pack/react-simple-icons";
 
 const Resume = () => {
   return (
@@ -67,9 +68,37 @@ const Resume = () => {
               {skills.map((skill) => (
                 <div
                   key={skill.id}
-                  className="flex flex-col flex-shrink-0 items-center justify-center border-3 w-24 h-24 p-5 rounded-full"
+                  className="flex flex-col flex-shrink-0 items-center justify-center border-1 w-24 h-24 p-5 rounded-lg"
                 >
-                  <FontAwesomeIcon className="text-4xl " icon={skill.icon} />
+                  {skill.isCustomIcon && skill.iconName === "postgresql" ? (
+                    <SiPostgresql size={30} color="#4169e1" />
+                  ) : skill.isCustomIcon && skill.iconName === "tailwind" ? (
+                    <SiTailwindcss size={30} color="#38b2ac" />
+                  ) : (
+                    <FontAwesomeIcon
+                      color={`${
+                        skill.name === "React"
+                          ? "#61dbfb"
+                          : skill.name === "Express Js"
+                          ? "#68A063"
+                          : skill.name === "HTML"
+                          ? "#e34c26"
+                          : skill.name === "CSS"
+                          ? "#2965f1"
+                          : skill.name === "Js"
+                          ? "#f0db4f"
+                          : skill.name === "Bootstrap"
+                          ? "#7952b3"
+                          : skill.name === "Git"
+                          ? "#f34f29"
+                          : skill.name === "Figma"
+                          ? "#f24e1e"
+                          : "red"
+                      }`}
+                      icon={skill.icon}
+                      size="2x"
+                    />
+                  )}
                   <p>{skill.name}</p>
                 </div>
               ))}
