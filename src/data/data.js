@@ -1,3 +1,4 @@
+import { faWordpress } from "@fortawesome/free-brands-svg-icons";
 import {
   faBootstrap,
   faCss3,
@@ -8,6 +9,12 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faHtml5 } from "@fortawesome/free-brands-svg-icons/faHtml5";
 import { faReact } from "@fortawesome/free-brands-svg-icons/faReact";
+import { faObjectGroup } from "@fortawesome/free-regular-svg-icons";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { faRocket } from "@fortawesome/free-solid-svg-icons";
+import { faStore } from "@fortawesome/free-solid-svg-icons";
+import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+import { faDesktop } from "@fortawesome/free-solid-svg-icons";
 
 export const testimonials = [
   {
@@ -147,5 +154,43 @@ export const skills = [
     icon: "tailwind",
     isCustomIcon: true,
     iconName: "tailwind",
+  },
+];
+
+export const services = [
+  {
+    id: 1,
+    title: "Custom Website Design and Development",
+    description:
+      "Create fully responsive, modern websites tailored to your clients unique brand identity. Utilizing React.js and Tailwind CSS, I develop high performance, visually stunning websites that may not only look exceptional but also provide an optimal user experience across all devices",
+    icon: faCode,
+  },
+  {
+    id: 2,
+    title: "Figma to Web Development",
+    description:
+      "Tranform your Figma designs into live websites with ease. I convert Figma designs into responsive websites using React.js and Tailwind CSS, ensuring a visually stunning and user-friendly experience across all devices",
+    icon: faLaptopCode,
+  },
+  {
+    id: 3,
+    title: "Ecommerce Website Solutions",
+    description:
+      "Builed robust online stores that drive sales and enhance customer engagement. I create custom ecommerce websites that are fast, secure, and easy to manage. With a focus on user experience and conversion optimization, I ensure your online store is designed to maximize revenue",
+    icon: faStore,
+  },
+  {
+    id: 4,
+    title: "Wordpress Website Redisign and Optimization",
+    description:
+      "Revamp existing Wordpress websites to improve performance, user experience and visual appeal. Services include redesigning outdated websites, optimizing site speed, and enhancing SEO to boost search engine rankings. I ensure your website is modern, user-friendly, and fully optimized for success",
+    icon: faWordpress,
+  },
+  {
+    id: 5,
+    title: "Landing Page Development",
+    description:
+      "Create high-converting landing pages that drive traffic and increase conversions. I specialize in developing custom landing pages that are designed to capture leads and drive sales. With a focus on user experience and conversion optimization, I ensure your landing page is optimized for maximum results",
+    icon: faRocket,
   },
 ];

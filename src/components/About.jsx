@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { testimonials } from "../data/data";
+import { Services } from "./Services";
 
 const About = () => {
   const [imageLoad, setImageLoad] = useState({});
@@ -76,6 +77,9 @@ const About = () => {
             </div>
           </div>
         </div>
+
+        {/* Services */}
+        <Services />
 
         {/* Testinonials */}
         <div className="mt-5 text-center flex flex-col gap-8 items-center justify-center border border-card-background bg-card-background py-10 px-5 rounded-[20px]">

@@ -23,7 +23,7 @@ const NavMenu = () => {
   const [imageLoad, setImageLoad] = useState(false);
   return (
     <div
-      className={`w-[70%] pl-5 pr-5 pt-5  py-10 flex flex-col fixed top-0 transition-all duration-300 ease-in-out ${
+      className={`w-[70%] pl-5 pr-5 pt-5  py-10 flex flex-col fixed overflow-scroll top-0 transition-all duration-300 ease-in-out ${
         isOpen ? "left-0" : ""
       } -left-full h-full bg-card-background z-50`}
     >
@@ -115,15 +115,6 @@ const NavMenu = () => {
         <NavLink
           onClick={() => setIsOpen(false)}
           className="flex px-[10px] items-center justify-between"
-          to="/pricing"
-        >
-          Pricing
-          <FontAwesomeIcon icon={faMoneyBillAlt} />
-        </NavLink>
-
-        <NavLink
-          onClick={() => setIsOpen(false)}
-          className="flex px-[10px] items-center justify-between"
           to="/contact"
         >
           Contact <FontAwesomeIcon icon={faContactBook} />
@@ -132,9 +123,16 @@ const NavMenu = () => {
 
       <div className="mt-5 flex flex-col gap-5 p-[10px]">
         <div className="flex flex-col gap-1">
+          <p className="">PHONE:</p>
+          <p className="text-white font-medium">+(233)240-536-268</p>
+        </div>
+        <div className="flex flex-col gap-1">
           <p className="">EMAIL:</p>
           <p className="text-white font-medium">hello@gentsie.com</p>
         </div>
+        <button className="bg-primary-color border-t-2 border-b-4 border-r-4 border-l-2 border-heading-color flex items-center gap-2 mt-3 justify-center w-full text-white cursor-pointer text-[18px] font-bold leading-[24px] overflow-visible rounded-[15px] text-center transition-all duration-300 py-3">
+          Hire Me
+        </button>
       </div>
     </div>
   );

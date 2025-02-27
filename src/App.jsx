@@ -7,7 +7,7 @@ import { NavProvider } from "./contexts/NavContext";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Resume from "./components/Resume";
-import Pricing from "./components/Pricing";
+
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -23,7 +23,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/resume" element={<Resume />} />
-            <Route path="/pricing" element={<Pricing />} />
+
             <Route path="/contact" element={<Contact />} />
           </Routes>
           <Footer />
