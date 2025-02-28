@@ -1,14 +1,18 @@
 import React, { useContext, useState } from "react";
 import { NavContext } from "../contexts/NavContext";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const { isOpen, setIsOpen } = useContext(NavContext);
   return (
     <div className="pl-5 pr-5 pt-5 fixed top-0 left-0 right-0 z-40">
       <div className="flex justify-between rounded-[20px] bg-card-background/50 backdrop-blur-md items-center py-4 px-5 border border-border-color">
-        <h1 className="logo font-poppins text-2xl font-bold text-white">
+        <Link
+          to="/"
+          className="logo font-poppins text-2xl font-bold text-white"
+        >
           Godfred<span className="text-primary-color text-3xl">.</span>
-        </h1>
+        </Link>
 
         <div
           onClick={() => setIsOpen(!isOpen)}
