@@ -17,9 +17,9 @@ const Resume = () => {
               <div className="flex items-center gap-5">
                 <div className="flex h-full flex-col items-center justify-center">
                   <div className="rounded-full flex items-center justify-center bg-card-background p-[5px] border-2 border-white">
-                    <div className="bg-white w-[10px] h-[10px] rounded-full"></div>
+                    <div className="bg-white animate-pulse w-[10px] h-[10px] rounded-full"></div>
                   </div>
-                  <div className="w-[2px] h-full bg-white"></div>
+                  <div className="w-[2px]  h-full bg-white"></div>
                 </div>
                 <div key={edu.id} className="flex flex-col gap-2 items-start">
                   <h1 className="text-[20px] text-left leading-[1.4] font-medium text-white">
@@ -41,7 +41,7 @@ const Resume = () => {
               <div className="flex items-center gap-5">
                 <div className="flex flex-col h-full items-center justify-center">
                   <div className="rounded-full flex items-center justify-center bg-card-background p-[5px] border-2 border-white">
-                    <div className="bg-white w-[10px] h-[10px] rounded-full"></div>
+                    <div className="bg-white w-[10px] animate-pulse h-[10px] rounded-full"></div>
                   </div>
                   <div className="w-[2px] h-full bg-white"></div>
                 </div>

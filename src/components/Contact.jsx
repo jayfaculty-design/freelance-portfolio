@@ -38,7 +38,7 @@ const Contact = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="h-3 w-3 rounded-full bg-light-green"></div>
+            <div className="h-3 w-3 rounded-full bg-light-green animate-pulse"></div>
             <p>Available Anytime</p>
           </div>
 
@@ -57,7 +57,7 @@ const Contact = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="h-3 w-3 rounded-full bg-light-green"></div>
+            <div className="h-3 w-3 rounded-full bg-light-green animate-pulse"></div>
             <p>Available 24/7</p>
           </div>
 
