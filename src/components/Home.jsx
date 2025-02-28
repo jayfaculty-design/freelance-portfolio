@@ -132,19 +132,34 @@ const Home = () => {
       </div>
 
       {/* companies */}
-      <div className="mt-5 flex flex-col gap-5 border border-card-background bg-card-background p-10 rounded-[20px]">
-        <h2 className="mb-[10px] text-[22px] text-heading-color font-medium leading-[1.2] ">
+      <div
+        className="mt-3 sm:mt-4 md:mt-5 
+            flex flex-col gap-3 sm:gap-4 md:gap-5 
+            border border-card-background bg-card-background 
+            p-5 sm:p-7 md:p-10 
+            rounded-[15px] md:rounded-[20px]"
+      >
+        <h2
+          className="mb-[5px] sm:mb-[8px] md:mb-[10px] 
+                text-[18px] sm:text-[20px] md:text-[22px] 
+                text-heading-color font-medium leading-[1.2]"
+        >
           Companies I worked With
         </h2>
-        <Marquee>
-          <div className="flex items-center gap-5">
-            <p className="servmark text-2xl ml-10">Servmark.ltd</p>
+        <Marquee speed={40} gradientWidth={20}>
+          <div className="flex items-center gap-3 sm:gap-4 md:gap-5">
+            <p className="servmark text-lg sm:text-xl md:text-2xl ml-5 sm:ml-8 md:ml-10">
+              Servmark.ltd
+            </p>
             <img
-              className="w-20 ml-10"
+              className="w-12 sm:w-16 md:w-20 ml-5 sm:ml-8 md:ml-10"
               src="/visio.png"
               alt="visiosculpt labs"
+              loading="lazy"
             />
-            <p className="text-2xl ml-10 mt-1">Nanti</p>
+            <p className="text-lg sm:text-xl md:text-2xl ml-5 sm:ml-8 md:ml-10 mt-0.5 sm:mt-1">
+              Nanti
+            </p>
           </div>
         </Marquee>
       </div>
