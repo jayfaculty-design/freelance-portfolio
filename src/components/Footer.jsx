@@ -15,7 +15,8 @@ const Footer = () => {
           full-time or part-time opportunities to push creative boundaries and
           deliver outstanding results
         </p>
-        <button className="bg-primary-color border border-button-border flex items-center gap-2 justify-center w-fit text-white cursor-pointer text-[14px] font-medium leading-[20px] overflow-visible rounded-[15px] text-center transition-all duration-300 py-[12px] px-[24px]">
+
+        <button className="bg-primary-color border-t-2 border-b-4 border-r-4 border-l-2 border-heading-color flex items-center gap-2 mt-0 justify-center w-fit text-white cursor-pointer text-[18px] font-bold leading-[24px] overflow-visible rounded-[15px] text-center transition-all duration-300 px-[32px] py-3">
           Let's Vibe
           <FontAwesomeIcon icon={faFacebookMessenger} />
         </button>

@@ -13,6 +13,7 @@ import {
   SiUpwork,
 } from "@icons-pack/react-simple-icons";
 import React from "react";
+import ContactForm from "./contact-form";
 
 const Contact = () => {
   return (
@@ -77,8 +78,8 @@ const Contact = () => {
           <FontAwesomeIcon icon={faLinkedin} className="text-[24px]" />
         </div>
 
-        <div className="flex w-full flex-col gap-5 items-start justify-start border border-border-color p-5 rounded-[20px]">
-          
+        <div className="flex w-full flex-col gap-5 items-start justify-start border border-border-color px-0 py-0 rounded-[20px]">
+          <ContactForm />
         </div>
       </div>
     </div>

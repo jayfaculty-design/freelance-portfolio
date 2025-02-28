@@ -14,8 +14,8 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      <NavProvider>
-        <BrowserRouter>
+      <BrowserRouter>
+        <NavProvider>
           <Navbar />
           <NavMenu />
           <Routes>
@@ -27,8 +27,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
           <Footer />
-        </BrowserRouter>
-      </NavProvider>
+        </NavProvider>
+      </BrowserRouter>
     </>
   );
 }
