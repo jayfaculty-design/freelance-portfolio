@@ -57,7 +57,7 @@ export const projects = [
     name: "Nanti",
     category: "Web Development",
     image: "/nanti-web.png",
-    live_url: "https://nantisys.com",
+    live_url: "https://www.nantisys.com/",
   },
   {
     id: 2,

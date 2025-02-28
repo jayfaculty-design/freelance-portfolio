@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { projects, testimonials } from "../data/data";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 const Portfolio = () => {
   const [imageLoad, setImageLoad] = useState({});
   const handleImageLoad = (id) => {
@@ -10,7 +12,7 @@ const Portfolio = () => {
   };
   return (
     <div className="mt-26">
-      <div className="text-center flex flex-col gap-5 items-center justify-center border border-card-background bg-card-background px-5 py-10 rounded-[20px]">
+      <div className="flex flex-col gap-5 items-center justify-center border border-card-background bg-card-background px-5 py-10 rounded-[20px]">
         <h1 className="text-[30px] font-bold text-heading-color leading-[40px] pb-[5px] text-center">
           Featured Projects
         </h1>
@@ -41,9 +43,17 @@ const Portfolio = () => {
               </div>
               <div className="px-5 py-5">
                 <h1 className="text-left font-poppins">{project.category}</h1>
-                <h1 className="text-left text-[25px] leading-[1.3] font-medium text-white">
+                <h1 className="text-left pb-3 text-[25px] leading-[1.3] font-medium text-white">
                   {project.name}
                 </h1>
+                <a
+                  className="w-fit text-image-background font-medium flex gap-2 hover:underline hover:underline-offset-1 items-center"
+                  href={project.live_url}
+                  target="_blank"
+                >
+                  Live Url
+                  <FontAwesomeIcon className="text-sm" icon={faExternalLink} />
+                </a>
               </div>
             </div>
           ))}
