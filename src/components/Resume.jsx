@@ -1,171 +1,523 @@
-import React from "react";
+import React, { useState } from "react";
 import { education, experience, skills } from "../data/data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SiPostgresql, SiTailwindcss } from "@icons-pack/react-simple-icons";
+import {
+  SiMongodb,
+  SiNextdotjs,
+  SiPostgresql,
+  SiTailwindcss,
+  SiTypescript,
+} from "@icons-pack/react-simple-icons";
+import {
+  faDownload,
+  faLanguage,
+  faCertificate,
+  faAward,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Resume = () => {
+  const [activeTab, setActiveTab] = useState("experience");
+
+  // Group skills by category
+  const skillCategories = {
+    Frontend: skills.filter((skill) =>
+      [
+        "React",
+        "HTML",
+        "CSS",
+        "Js",
+        "Bootstrap",
+        "tailwind",
+        "Typescript",
+        "Next.js",
+      ].includes(skill.name || skill.iconName)
+    ),
+    Backend: skills.filter((skill) =>
+      ["Express Js", "Node.js", "PostgreSQL", "MongoDB"].includes(
+        skill.name || skill.iconName
+      )
+    ),
+    Tools: skills.filter((skill) =>
+      ["Git", "Figma", "Docker"].includes(skill.name || skill.iconName)
+    ),
+  };
+
   return (
-    <div className="mt-26">
-      <div className="text-center flex flex-col gap-4 sm:gap-5 
-            items-center justify-center 
-            border border-card-background bg-card-background 
-            px-4 sm:px-5 
-            py-6 sm:py-8 md:py-10 
-            rounded-[15px] sm:rounded-[18px] md:rounded-[20px]">
-  {/* school and experience */}
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
-                gap-10 sm:gap-15 md:gap-20 
-                w-full">
-    <div className="flex gap-6 sm:gap-8 md:gap-10 flex-col">
-      <h2 className="text-[22px] sm:text-[26px] md:text-[30px] 
-                  text-left 
-                  font-bold 
-                  text-heading-color 
-                  leading-[30px] sm:leading-[36px] md:leading-[40px] 
-                  pb-[0px]">
-        Education
-      </h2>
-      {education.map((edu) => (
-        <div key={edu.id} className="flex items-start gap-3 sm:gap-4 md:gap-5">
-          <div className="flex h-full flex-col items-center">
-            <div className="rounded-full 
-                        flex items-center justify-center 
-                        bg-card-background 
-                        p-[4px] sm:p-[5px] 
-                        border-2 border-white">
-              <div className="bg-white animate-pulse 
-                          w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] 
-                          rounded-full"></div>
-            </div>
-            <div className="w-[2px] h-full bg-white"></div>
-          </div>
-          <div className="flex flex-col gap-1 sm:gap-2 items-start pt-0.5">
-            <h3 className="text-[18px] sm:text-[20px] 
-                        text-left 
-                        leading-[1.3] sm:leading-[1.4] 
-                        font-medium text-white">
-              {edu.degree}
-            </h3>
-            <p className="text-[13px] sm:text-[14px] md:text-[15px] text-left">
-              {edu.school}
-            </p>
-            <p className="text-[12px] sm:text-[13px] md:text-[14px] text-left text-gray-400">
-              {edu.year}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    {/* experience */}
-    <div className="flex gap-6 sm:gap-8 md:gap-10 flex-col">
-      <h2 className="text-[22px] sm:text-[26px] md:text-[30px] 
-                  text-left 
-                  font-bold 
-                  text-heading-color 
-                  leading-[30px] sm:leading-[36px] md:leading-[40px] 
-                  pb-[0px]">
-        Experience
-      </h2>
-      {experience.map((exp) => (
-        <div key={exp.id} className="flex items-start gap-3 sm:gap-4 md:gap-5">
-          <div className="flex flex-col h-full items-center">
-            <div className="rounded-full 
-                        flex items-center justify-center 
-                        bg-card-background 
-                        p-[4px] sm:p-[5px] 
-                        border-2 border-white">
-              <div className="bg-white w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] 
-                          animate-pulse rounded-full"></div>
-            </div>
-            <div className="w-[2px] h-full bg-white"></div>
-          </div>
-          <div className="flex flex-col gap-1 sm:gap-2 items-start pt-0.5">
-            <h3 className="text-[18px] sm:text-[20px] 
-                        leading-[1.3] sm:leading-[1.4] 
-                        font-medium text-white">
-              {exp.company}
-            </h3>
-            <p className="text-[13px] sm:text-[14px] md:text-[15px]">
-              {exp.job}
-            </p>
-            <p className="text-[12px] sm:text-[13px] md:text-[14px] text-gray-400">
-              {exp.year}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    {/* skills */}
-    <div className="w-full">
-      <h2 className="text-[22px] sm:text-[26px] md:text-[30px] 
-                  font-bold 
-                  text-heading-color 
-                  leading-[30px] sm:leading-[36px] md:leading-[40px] 
-                  pb-[0px] 
-                  text-left md:text-center lg:text-left">
-        Skills
-      </h2>
-      <div className="flex gap-3 sm:gap-4 md:gap-5 
-                    overflow-x-auto 
-                    py-5 sm:py-6 md:py-8 
-                    no-scrollbar 
-                    items-center 
-                    overflow-hidden whitespace-nowrap">
-        {skills.map((skill) => (
-          <div
-            key={skill.id}
-            className="flex flex-col 
-                      flex-shrink-0 
-                      items-center justify-center 
-                      border border-border-color 
-                      w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 
-                      p-3 sm:p-4 md:p-5 
-                      rounded-lg
-                      hover:border-primary-color/30
-                      transition-all duration-300
-                      hover:shadow-md"
+    <div className="mt-24 sm:mt-28 md:mt-32 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto mb-8 sm:mb-10 md:mb-12">
+      {/* Resume Header */}
+      <div
+        className="flex flex-col sm:flex-row justify-between items-center 
+          border border-card-background bg-card-background 
+          px-5 sm:px-6 md:px-8 lg:px-10
+          py-6 sm:py-7 md:py-8 
+          rounded-[15px] sm:rounded-[18px] md:rounded-[20px]
+          mb-5"
+      >
+        <div className="text-center sm:text-left mb-4 sm:mb-0">
+          <span className="text-[14px] sm:text-[15px] text-primary-color font-medium">
+            My Resume
+          </span>
+          <h1
+            className="text-[22px] sm:text-[26px] md:text-[30px] 
+              font-bold text-heading-color 
+              leading-tight mt-1"
           >
-            {skill.isCustomIcon && skill.iconName === "postgresql" ? (
-              <SiPostgresql size={24} className="sm:text-[26px] md:text-[30px]" color="#4169e1" />
-            ) : skill.isCustomIcon && skill.iconName === "tailwind" ? (
-              <SiTailwindcss size={24} className="sm:text-[26px] md:text-[30px]" color="#38b2ac" />
-            ) : (
-              <FontAwesomeIcon
-                color={`${
-                  skill.name === "React"
-                    ? "#61dbfb"
-                    : skill.name === "Express Js"
-                    ? "#68A063"
-                    : skill.name === "HTML"
-                    ? "#e34c26"
-                    : skill.name === "CSS"
-                    ? "#2965f1"
-                    : skill.name === "Js"
-                    ? "#f0db4f"
-                    : skill.name === "Bootstrap"
-                    ? "#7952b3"
-                    : skill.name === "Git"
-                    ? "#f34f29"
-                    : skill.name === "Figma"
-                    ? "#f24e1e"
-                    : "red"
-                }`}
-                icon={skill.icon}
-                className="text-[24px] sm:text-[26px] md:text-[30px]"
-              />
-            )}
-            <p className="text-[12px] sm:text-[13px] md:text-[14px] mt-1 sm:mt-2">
-              {skill.name}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</div>
+            Professional Experience
+          </h1>
+          <p className="text-[14px] sm:text-[15px] text-gray-300 mt-1 max-w-md">
+            A summary of my education, work experience, skills, and
+            qualifications.
+          </p>
+        </div>
 
+        <a
+          href="/resume.pdf"
+          download
+          className="bg-primary-color 
+                border-t-2 border-b-3 border-r-3 border-l-2 border-heading-color 
+                flex items-center gap-2
+                justify-center w-fit text-white cursor-pointer 
+                text-[14px] sm:text-[15px]
+                font-bold leading-[20px] 
+                rounded-[12px] 
+                transition-all duration-300 
+                px-5 py-2.5
+                hover:translate-y-[-2px] active:translate-y-[1px]"
+        >
+          Download CV
+          <FontAwesomeIcon icon={faDownload} />
+        </a>
+      </div>
+
+      {/* Main Content */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        {/* Left Column - Timeline */}
+        <div
+          className="lg:col-span-2 border border-card-background bg-card-background 
+            px-5 sm:px-6 md:px-8 
+            py-6 sm:py-7 md:py-8 
+            rounded-[15px] sm:rounded-[18px] md:rounded-[20px]"
+        >
+          {/* Tab Navigation */}
+          <div className="flex border-b border-border-color mb-6">
+            {["experience", "education"].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-4 py-2 text-[15px] sm:text-[16px] font-medium capitalize
+                  ${
+                    activeTab === tab
+                      ? "text-primary-color border-b-2 border-primary-color"
+                      : "text-gray-400 hover:text-gray-300"
+                  }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          {/* Experience Tab */}
+          {activeTab === "experience" && (
+            <div className="flex flex-col gap-8">
+              {experience.map((exp, index) => (
+                <div key={exp.id} className="flex items-start gap-4 sm:gap-5">
+                  <div className="flex h-full flex-col items-center">
+                    <div
+                      className="rounded-full 
+                                flex items-center justify-center 
+                                bg-card-background 
+                                p-[5px] sm:p-[6px] 
+                                border-2 border-primary-color"
+                    >
+                      <div
+                        className="bg-primary-color 
+                                  w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] 
+                                  rounded-full"
+                      ></div>
+                    </div>
+                    {index !== experience.length - 1 && (
+                      <div className="w-[2px] h-full bg-border-color"></div>
+                    )}
+                  </div>
+
+                  <div className="flex flex-col gap-2 pb-2">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+                      <h3
+                        className="text-[18px] sm:text-[20px] 
+                                font-medium text-white"
+                      >
+                        {exp.job}
+                      </h3>
+                      <span className="hidden sm:block text-gray-400">•</span>
+                      <p className="text-[14px] sm:text-[15px] text-primary-color font-medium">
+                        {exp.company}
+                      </p>
+                    </div>
+
+                    <p className="text-[13px] sm:text-[14px] text-gray-400 italic">
+                      {exp.year}
+                    </p>
+
+                    {exp.description && (
+                      <p className="text-[14px] sm:text-[15px] text-gray-300 mt-1">
+                        {exp.description}
+                      </p>
+                    )}
+
+                    {exp.achievements && (
+                      <ul className="list-disc list-inside text-[14px] sm:text-[15px] text-gray-300 mt-1 space-y-1">
+                        {exp.achievements.map((achievement, i) => (
+                          <li key={i}>{achievement}</li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {exp.technologies && (
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        {exp.technologies.map((tech, i) => (
+                          <span
+                            key={i}
+                            className="text-[12px] px-2 py-1 bg-background-color rounded-full text-gray-300"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Education Tab */}
+          {activeTab === "education" && (
+            <div className="flex flex-col gap-8">
+              {education.map((edu, index) => (
+                <div key={edu.id} className="flex items-start gap-4 sm:gap-5">
+                  <div className="flex h-full flex-col items-center">
+                    <div
+                      className="rounded-full 
+                                flex items-center justify-center 
+                                bg-card-background 
+                                p-[5px] sm:p-[6px] 
+                                border-2 border-primary-color"
+                    >
+                      <div
+                        className="bg-primary-color 
+                                  w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] 
+                                  rounded-full"
+                      ></div>
+                    </div>
+                    {index !== education.length - 1 && (
+                      <div className="w-[2px] h-full bg-border-color"></div>
+                    )}
+                  </div>
+
+                  <div className="flex flex-col gap-2 pb-2">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+                      <h3
+                        className="text-[18px] sm:text-[20px] 
+                                font-medium text-white"
+                      >
+                        {edu.degree}
+                      </h3>
+                      <span className="hidden sm:block text-gray-400">•</span>
+                      <p className="text-[14px] sm:text-[15px] text-primary-color font-medium">
+                        {edu.school}
+                      </p>
+                    </div>
+
+                    <p className="text-[13px] sm:text-[14px] text-gray-400 italic">
+                      {edu.year}
+                    </p>
+
+                    {edu.description && (
+                      <p className="text-[14px] sm:text-[15px] text-gray-300 mt-1">
+                        {edu.description}
+                      </p>
+                    )}
+
+                    {edu.courses && (
+                      <div className="mt-2">
+                        <p className="text-[14px] font-medium text-gray-300 mb-1">
+                          Relevant Courses:
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {edu.courses.map((course, i) => (
+                            <span
+                              key={i}
+                              className="text-[12px] px-2 py-1 bg-background-color rounded-full text-gray-300"
+                            >
+                              {course}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Right Column - Skills & Additional Info */}
+        <div className="flex flex-col gap-5">
+          {/* Skills Section */}
+          <div
+            className="border border-card-background bg-card-background 
+              px-5 sm:px-6 
+              py-6 sm:py-7 
+              rounded-[15px] sm:rounded-[18px] md:rounded-[20px]"
+          >
+            <h2
+              className="text-[20px] sm:text-[22px] 
+                font-bold text-heading-color 
+                mb-4"
+            >
+              Skills
+            </h2>
+
+            {Object.entries(skillCategories).map(
+              ([category, categorySkills]) => (
+                <div key={category} className="mb-5 last:mb-0">
+                  <h3 className="text-[16px] font-medium text-primary-color mb-3">
+                    {category}
+                  </h3>
+
+                  <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 gap-3">
+                    {categorySkills.map((skill) => (
+                      <div
+                        key={skill.id}
+                        className="flex flex-col 
+                            items-center justify-center 
+                            border border-border-color 
+                            p-3 
+                            rounded-lg
+                            hover:border-primary-color/30
+                            transition-all duration-300
+                            hover:shadow-md
+                            aspect-square"
+                      >
+                        {skill.isCustomIcon &&
+                        skill.iconName === "postgresql" ? (
+                          <SiPostgresql
+                            size={24}
+                            className="sm:text-[26px]"
+                            color="#4169e1"
+                          />
+                        ) : skill.isCustomIcon &&
+                          skill.iconName === "tailwind" ? (
+                          <SiTailwindcss
+                            size={24}
+                            className="sm:text-[26px]"
+                            color="#38b2ac"
+                          />
+                        ) : skill.isCustomIcon &&
+                          skill.iconName === "next.js" ? (
+                          <SiNextdotjs
+                            size={24}
+                            className="sm:text-[26px]"
+                            color="#fff"
+                          />
+                        ) : skill.isCustomIcon &&
+                          skill.iconName === "mongodb" ? (
+                          <SiMongodb
+                            size={24}
+                            className="sm:text-[26px]"
+                            color="#4DB33D"
+                          />
+                        ) : skill.isCustomIcon &&
+                          skill.iconName === "typescript" ? (
+                          <SiTypescript
+                            size={24}
+                            className="sm:text-[26px]"
+                            color="#3178c6"
+                          />
+                        ) : (
+                          <FontAwesomeIcon
+                            color={`${
+                              skill.name === "React"
+                                ? "#61dbfb"
+                                : skill.name === "Express Js"
+                                ? "#68A063"
+                                : skill.name === "HTML"
+                                ? "#e34c26"
+                                : skill.name === "CSS"
+                                ? "#2965f1"
+                                : skill.name === "Js"
+                                ? "#f0db4f"
+                                : skill.name === "Bootstrap"
+                                ? "#7952b3"
+                                : skill.name === "Git"
+                                ? "#f34f29"
+                                : skill.name === "Figma"
+                                ? "#f24e1e"
+                                : "red"
+                            }`}
+                            icon={skill.icon}
+                            className="text-[24px] sm:text-[26px]"
+                          />
+                        )}
+                        <p className="text-[12px] text-center mt-2 line-clamp-1">
+                          {skill.name}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )
+            )}
+          </div>
+
+          {/* Languages Section */}
+          <div
+            className="border border-card-background bg-card-background 
+              px-5 sm:px-6 
+              py-6 sm:py-7 
+              rounded-[15px] sm:rounded-[18px] md:rounded-[20px]"
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <FontAwesomeIcon
+                icon={faLanguage}
+                className="text-primary-color text-[18px]"
+              />
+              <h2 className="text-[20px] sm:text-[22px] font-bold text-heading-color">
+                Languages
+              </h2>
+            </div>
+
+            <div className="space-y-3">
+              {[
+                {
+                  language: "English",
+                  level: "Native/Fluent",
+                  proficiency: 100,
+                },
+                { language: "French", level: "Intermediate", proficiency: 60 },
+                { language: "Spanish", level: "Basic", proficiency: 30 },
+              ].map((lang, index) => (
+                <div key={index} className="flex flex-col gap-1">
+                  <div className="flex justify-between">
+                    <span className="text-[15px] font-medium">
+                      {lang.language}
+                    </span>
+                    <span className="text-[13px] text-gray-400">
+                      {lang.level}
+                    </span>
+                  </div>
+                  <div className="w-full bg-background-color rounded-full h-2">
+                    <div
+                      className="bg-primary-color h-2 rounded-full"
+                      style={{ width: `${lang.proficiency}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Certifications Section */}
+          <div
+            className="border border-card-background bg-card-background 
+              px-5 sm:px-6 
+              py-6 sm:py-7 
+              rounded-[15px] sm:rounded-[18px] md:rounded-[20px]"
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <FontAwesomeIcon
+                icon={faCertificate}
+                className="text-primary-color text-[18px]"
+              />
+              <h2 className="text-[20px] sm:text-[22px] font-bold text-heading-color">
+                Certifications
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  name: "AWS Certified Developer",
+                  issuer: "Amazon Web Services",
+                  year: "2023",
+                },
+                {
+                  name: "React Advanced Concepts",
+                  issuer: "Frontend Masters",
+                  year: "2022",
+                },
+                {
+                  name: "Full Stack Web Development",
+                  issuer: "Udacity",
+                  year: "2021",
+                },
+              ].map((cert, index) => (
+                <div key={index} className="flex flex-col">
+                  <h3 className="text-[16px] font-medium text-white">
+                    {cert.name}
+                  </h3>
+                  <div className="flex justify-between">
+                    <span className="text-[14px] text-gray-300">
+                      {cert.issuer}
+                    </span>
+                    <span className="text-[13px] text-primary-color">
+                      {cert.year}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Awards Section */}
+          <div
+            className="border border-card-background bg-card-background 
+              px-5 sm:px-6 
+              py-6 sm:py-7 
+              rounded-[15px] sm:rounded-[18px] md:rounded-[20px]"
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <FontAwesomeIcon
+                icon={faAward}
+                className="text-primary-color text-[18px]"
+              />
+              <h2 className="text-[20px] sm:text-[22px] font-bold text-heading-color">
+                Awards
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  name: "Best Web Application",
+                  event: "Ghana Tech Summit",
+                  year: "2023",
+                },
+                {
+                  name: "Innovation Award",
+                  event: "Africa Developer Conference",
+                  year: "2022",
+                },
+              ].map((award, index) => (
+                <div key={index} className="flex flex-col">
+                  <h3 className="text-[16px] font-medium text-white">
+                    {award.name}
+                  </h3>
+                  <div className="flex justify-between">
+                    <span className="text-[14px] text-gray-300">
+                      {award.event}
+                    </span>
+                    <span className="text-[13px] text-primary-color">
+                      {award.year}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

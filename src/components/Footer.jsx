@@ -1,70 +1,76 @@
 import { faFacebookMessenger } from "@fortawesome/free-brands-svg-icons";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const Footer = () => {
   return (
-    <div className="mt-10">
+    <div className="mt-5 sm:mt-8 md:mt-10 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto mb-8 sm:mb-10 md:mb-12">
       <div
-        className="text-center flex flex-col gap-3 sm:gap-4 md:gap-5 
+        className="text-center flex flex-col gap-3 sm:gap-4 
             items-center justify-center 
             border border-card-background bg-card-background 
-            px-4 sm:px-5 
-            py-6 sm:py-8 md:py-10 
+            px-4 sm:px-6 md:px-8 lg:px-10
+            py-5 sm:py-6 md:py-8 
             rounded-[15px] sm:rounded-[18px] md:rounded-[20px]"
       >
         <h2
           className="text-heading-color 
-                text-[20px] sm:text-[24px] md:text-[30px] 
+                text-[18px] sm:text-[22px] md:text-[26px] 
                 font-poppins 
-                leading-[28px] sm:leading-[34px] md:leading-[40px] 
-                w-full sm:w-80 md:w-96 
+                leading-[26px] sm:leading-[30px] md:leading-[36px] 
+                max-w-[300px] sm:max-w-[400px] md:max-w-[500px] 
                 font-normal 
-                mb-[3px] sm:mb-[4px] md:mb-[5px] 
+                mb-1 sm:mb-2
                 text-center"
         >
           Excited to bring your project to life with a spark of innovation?
         </h2>
+        
         <p
-          className="text-[14px] sm:text-[15px] md:text-[16px]
-              leading-[22px] sm:leading-[24px] md:leading-[28px] 
-              mb-[0.5rem] sm:mb-[0.75rem] md:mb-[1rem] 
+          className="text-[13px] sm:text-[14px] md:text-[15px]
+              leading-[20px] sm:leading-[22px] md:leading-[24px] 
+              mb-2 sm:mb-3 md:mb-4
               text-center
-              max-w-[95%] sm:max-w-[90%] md:max-w-[85%]"
+              max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[60%]"
         >
           Let's connect and bring your vision to life🎈.{" "}
           <br className="hidden sm:block" />
           I'm also open to full-time or part-time opportunities to push creative
-          boundaries and deliver outstanding results
+          boundaries and deliver outstanding results.
         </p>
 
-        <button
+        <a
+          href="/contact"
           className="bg-primary-color 
                   border-t-2 border-b-3 sm:border-b-4 border-r-3 sm:border-r-4 border-l-2 
                   border-heading-color 
                   flex items-center gap-1 sm:gap-2 
-                  mt-1 sm:mt-0 
                   justify-center w-fit 
                   text-white cursor-pointer 
-                  text-[15px] sm:text-[16px] md:text-[18px] 
+                  text-[14px] sm:text-[15px] md:text-[16px] 
                   font-bold 
-                  leading-[20px] sm:leading-[22px] md:leading-[24px] 
+                  leading-[20px] sm:leading-[22px] 
                   overflow-visible 
-                  rounded-[12px] sm:rounded-[14px] md:rounded-[15px] 
+                  rounded-[10px] sm:rounded-[12px] md:rounded-[15px] 
                   text-center 
                   transition-all duration-300 
-                  px-[20px] sm:px-[26px] md:px-[32px] 
+                  px-[18px] sm:px-[22px] md:px-[28px] 
                   py-2 sm:py-2.5 md:py-3
-                  hover:translate-y-[-3px] hover:shadow-lg
+                  hover:translate-y-[-2px] hover:shadow-lg
                   active:translate-y-[1px]"
         >
           Let's Vibe
           <FontAwesomeIcon
             icon={faFacebookMessenger}
-            className="text-[14px] sm:text-[16px] md:text-[18px]"
+            className="text-[14px] sm:text-[15px] md:text-[16px]"
           />
-        </button>
+        </a>
+        
+        <div className="w-full mt-4 sm:mt-6 md:mt-8 pt-4 sm:pt-5 md:pt-6 border-t border-border-color/20 text-center">
+          <p className="text-[12px] sm:text-[13px] text-gray-400">
+            © {new Date().getFullYear()} Godfred Entsie. All rights reserved.
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -82,20 +82,32 @@ export const education = [
     degree: "General Arts",
     year: "2016 - 2019",
   },
+  {
+    id: 3,
+    school: "Udacity",
+    degree: "Web Development Certification",
+    year: "2017",
+  },
 ];
 
 export const experience = [
   {
     id: 1,
-    company: "Jay Webs Company Ltd.",
-    job: "Web Developer",
-    year: "2023 - Present",
+    company: "Servmark.ltd",
+    job: "Senior Frontend Developer",
+    year: "2021 - Present",
   },
   {
     id: 2,
-    company: "Nanti Systems",
-    job: "Frontend Developer",
-    year: "2022 - 2023",
+    company: "Visiosculpt Labs",
+    job: "Full Stack Developer",
+    year: "2019 - 2021",
+  },
+  {
+    id: 3,
+    company: "Nanti",
+    job: "Junior Web Developer",
+    year: "2018 - 2019",
   },
 ];
 
@@ -154,6 +166,27 @@ export const skills = [
     icon: "tailwind",
     isCustomIcon: true,
     iconName: "tailwind",
+  },
+  {
+    id: 10,
+    name: "Typescript",
+    icon: "typescript",
+    isCustomIcon: true,
+    iconName: "typescript",
+  },
+  {
+    id: 11,
+    name: "Next.js",
+    icon: "next.js",
+    isCustomIcon: true,
+    iconName: "next.js",
+  },
+  {
+    id: 11,
+    name: "MongoDB",
+    icon: "mongodb",
+    isCustomIcon: true,
+    iconName: "mongodb",
   },
 ];
 
