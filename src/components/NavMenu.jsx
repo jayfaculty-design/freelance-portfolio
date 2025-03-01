@@ -61,7 +61,7 @@ const NavMenu = () => {
       {/* Menu */}
       <div
         className={`w-[85%] sm:w-[70%] md:w-[60%] lg:w-[400px]
-                  px-4 sm:px-5 
+                  px-4 sm:px-5 font-space-grotesk
                   py-6 sm:py-8 
                   flex flex-col 
                   fixed 
@@ -121,7 +121,7 @@ const NavMenu = () => {
             <h2
               className="text-[24px] sm:text-[28px] md:text-[30px] 
                           font-bold 
-                          text-white 
+                          text-white font-space-grotesk
                           leading-[36px] sm:leading-[40px] md:leading-[48px]"
             >
               Godfred Entsie
@@ -130,7 +130,7 @@ const NavMenu = () => {
               className="text-[14px] sm:text-[15px] 
                         font-medium 
                         leading-[20px] sm:leading-[24px] 
-                        text-neutral-300 
+                        text-neutral-300 font-space-grotesk
                         tracking-wider"
             >
               FULLSTACK DEVELOPER

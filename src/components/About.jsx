@@ -19,7 +19,7 @@ const About = () => {
   };
 
   return (
-    <div className="mt-24 sm:mt-28 md:mt-32 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
+    <div className="mt-24 font-space-grotesk sm:mt-28 md:mt-32 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
       {/* About Me Section */}
       <ScrollReveal direction="up" delay={0.1} distance={30}>
         <div
@@ -38,7 +38,7 @@ const About = () => {
 
               <h1
                 className="text-[24px] sm:text-[28px] md:text-[32px] 
-                  font-noto 
+                  font-space-grotesk
                   leading-[30px] sm:leading-[34px] md:leading-[38px] 
                   font-bold text-heading-color"
               >
@@ -62,7 +62,7 @@ const About = () => {
             distance={20}
             className="w-full"
           >
-            <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 font-noto">
+            <div className="flex flex-col gap-3 sm:gap-4 md:gap-5 font-space-grotesk">
               <p
                 className="text-[14px] sm:text-[15px] md:text-[16px] 
                   font-normal 

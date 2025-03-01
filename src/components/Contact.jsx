@@ -57,7 +57,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="mt-24 sm:mt-28 md:mt-32 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto mb-8 sm:mb-10 md:mb-12">
+    <div className="mt-24 font-space-grotesk sm:mt-28 md:mt-32 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto mb-8 sm:mb-10 md:mb-12">
       <div className="flex flex-col gap-5 sm:gap-6 md:gap-8">
         {/* Contact Header */}
         <ScrollReveal direction="up" delay={0.1} distance={30}>

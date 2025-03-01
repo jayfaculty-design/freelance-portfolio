@@ -32,7 +32,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="mt-24 sm:mt-28 md:mt-32 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
+    <div className="mt-24 font-space-grotesk sm:mt-28 md:mt-32 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
       {/* Grid layout for desktop, stack for mobile */}
       <div
         className={`${

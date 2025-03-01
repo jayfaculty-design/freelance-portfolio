@@ -32,7 +32,7 @@ const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-40 
                 px-3 sm:px-4 md:px-5 lg:px-8
-                pt-3 sm:pt-4 md:pt-5 
+                pt-3 sm:pt-4 md:pt-5 font-space-grotesk
                 transition-all duration-300
                 ${scrolled ? "backdrop-blur-md" : ""}`}
     >
