@@ -105,10 +105,26 @@ const Home = () => {
                             mx-auto gap-4"
               >
                 {[
-                  { icon: faFacebook, href: "#", label: "Facebook" },
-                  { icon: faXTwitter, href: "#", label: "Twitter" },
-                  { icon: faLinkedinIn, href: "#", label: "LinkedIn" },
-                  { icon: faGithub, href: "#", label: "GitHub" },
+                  {
+                    icon: faFacebook,
+                    href: "http://facebook.com/godentsie",
+                    label: "Facebook",
+                  },
+                  {
+                    icon: faXTwitter,
+                    href: "https://x.com/jaywebs_",
+                    label: "Twitter",
+                  },
+                  {
+                    icon: faLinkedinIn,
+                    href: "https://www.linkedin.com/in/godfred-entsie-952a69223/",
+                    label: "LinkedIn",
+                  },
+                  {
+                    icon: faGithub,
+                    href: "https://github.com/jayfaculty-design",
+                    label: "GitHub",
+                  },
                 ].map((social, index) => (
                   <a
                     key={index}
@@ -233,7 +249,7 @@ const Home = () => {
                 distance={20}
                 className="mt-auto"
               >
-                <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                <div className="flex  flex-col items-start gap-3 sm:gap-4">
                   <div className="flex items-center gap-2 sm:gap-3">
                     <div className="h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-light-green animate-pulse"></div>
                     <p className="text-[13px] sm:text-[14px] md:text-[16px]">
@@ -246,7 +262,7 @@ const Home = () => {
                     download
                     className="bg-primary-color 
                             border-t-2 border-b-3 sm:border-b-4 border-r-3 sm:border-r-4 border-l-2 border-heading-color 
-                            flex items-center gap-1 sm:gap-2 ml-auto
+                            flex items-center gap-1 sm:gap-2 ml-0 md:ml-auto lg:ml-auto 
                             justify-center w-fit text-white cursor-pointer 
                             text-[12px] sm:text-[13px] md:text-[14px] 
                             font-bold leading-[18px] sm:leading-[20px] 
