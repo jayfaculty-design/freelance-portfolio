@@ -22,6 +22,9 @@
   --font-noto: "Noto Sans", serif;
   --font-arsenal: "Arsenal SC", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: var(--font-noto);
@@ -31,6 +34,7 @@ body {
   background-color: var(--color-body-background);
   scroll-behavior: smooth;
   padding: 20px;
+  -webkit-overflow-scrolling: touch;
 }
 .servmark {
   font-family: var(--font-arsenal);
