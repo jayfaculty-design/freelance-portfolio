@@ -68,6 +68,13 @@ export const projects = [
   },
   {
     id: 3,
+    name: "Cafe De Boba",
+    category: "Ecommerce",
+    image: "/Cafe.png",
+    live_url: "http://www.cafedeboba.com/",
+  },
+  {
+    id: 4,
     name: "Coffe Shop",
     category: "Ecommerce",
     image: "/coffe-shop.png",
