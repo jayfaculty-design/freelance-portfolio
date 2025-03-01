@@ -21,6 +21,7 @@
   --font-poppins: "Poppins", sans-serif;
   --font-noto: "Noto Sans", serif;
   --font-arsenal: "Arsenal SC", sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
 }
 html {
   scroll-behavior: smooth;

@@ -340,13 +340,13 @@ const Home = () => {
                     </div>
 
                     <div className="flex items-center gap-2 bg-card-background/50 px-4 py-2 rounded-lg">
-                      <p className="text-lg sm:text-xl md:text-2xl font-medium">
-                        TechFusion
+                      <p className="text-lg font-space-grotesk sm:text-xl md:text-2xl font-medium">
+                        Edudask
                       </p>
                     </div>
 
                     <div className="flex items-center gap-2 bg-card-background/50 px-4 py-2 rounded-lg">
-                      <p className="text-lg sm:text-xl md:text-2xl font-medium">
+                      <p className="text-lg font-poppins sm:text-xl md:text-2xl font-medium">
                         WebSphere
                       </p>
                     </div>
