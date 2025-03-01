@@ -170,6 +170,7 @@ const Portfolio = () => {
                       {!imageLoad[project.id] && (
                         <div className="absolute inset-0 bg-gray-300 animate-pulse"></div>
                       )}
+
                       <img
                         className="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
                         src={project.image}
@@ -177,10 +178,15 @@ const Portfolio = () => {
                         loading="lazy"
                         onLoad={() => handleImageLoad(project.id)}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
-                        <div className="p-4 w-full">
-                          <div className="flex gap-2 justify-end">
-                            {project.github_url && (
+                      <a
+                        href={project.live_url || project.github_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+                          <div className="p-4 w-full">
+                            <div className="flex gap-2 justify-end">
+                              {/* {project.github_url && (
                               <a
                                 href={project.github_url}
                                 target="_blank"
@@ -193,24 +199,25 @@ const Portfolio = () => {
                                   className="text-white text-sm"
                                 />
                               </a>
-                            )}
-                            {project.live_url && (
-                              <a
-                                href={project.live_url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="bg-primary-color/80 hover:bg-primary-color p-2 rounded-full transition-colors duration-300"
-                                aria-label="View live site"
-                              >
-                                <FontAwesomeIcon
-                                  icon={faExternalLink}
-                                  className="text-white text-sm"
-                                />
-                              </a>
-                            )}
+                            )} */}
+                              {project.live_url && (
+                                <a
+                                  href={project.live_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="bg-primary-color/80 hover:bg-primary-color p-2 rounded-full transition-colors duration-300"
+                                  aria-label="View live site"
+                                >
+                                  <FontAwesomeIcon
+                                    icon={faExternalLink}
+                                    className="text-white text-sm"
+                                  />
+                                </a>
+                              )}
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      </a>
                     </div>
 
                     <div className="px-4 py-4 flex-grow flex flex-col">

@@ -64,14 +64,14 @@ export const projects = [
     name: "IP Addres Tracker",
     category: "Web Development",
     image: "/ip-tracker.png",
-    github: "https://jay-ip-tracker.vercel.app/",
+    live_url: "https://jay-ip-tracker.vercel.app/",
   },
   {
     id: 3,
     name: "Coffe Shop",
     category: "Ecommerce",
     image: "/coffe-shop.png",
-    github: "http://coffee-shop-opal.vercel.app/",
+    live_url: "http://coffee-shop-opal.vercel.app/",
   },
 ];
 
