@@ -6,6 +6,7 @@ import {
   faCode,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
+import NotchMotion from "./NotchMotion";
 
 const Portfolio = () => {
   const [imageLoad, setImageLoad] = useState({});
@@ -136,10 +137,10 @@ const Portfolio = () => {
         {/* Projects Grid */}
         {filteredProjects.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 w-full max-w-[95%] sm:max-w-[90%] md:max-w-[85%] lg:max-w-[80%]">
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="rounded-[12px] sm:rounded-[14px] 
+            {filteredProjects.map((project, index) => (
+              <NotchMotion key={project.id} type="default" delay={index * 0.1}>
+                <div
+                  className="rounded-[12px] sm:rounded-[14px] 
                   border border-border-color 
                   flex flex-col 
                   overflow-hidden
@@ -147,103 +148,106 @@ const Portfolio = () => {
                   hover:shadow-lg hover:border-primary-color/30
                   hover:translate-y-[-3px]
                   bg-card-background/50"
-              >
-                <div className="relative w-full h-[160px] sm:h-[180px] md:h-[200px] overflow-hidden">
-                  {!imageLoad[project.id] && (
-                    <div className="absolute inset-0 bg-gray-300 animate-pulse"></div>
-                  )}
-                  <img
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
-                    src={project.image}
-                    alt={project.name}
-                    loading="lazy"
-                    onLoad={() => handleImageLoad(project.id)}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-4 w-full">
-                      <div className="flex gap-2 justify-end">
-                        {project.github_url && (
-                          <a
-                            href={project.github_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-background-color/80 hover:bg-background-color p-2 rounded-full transition-colors duration-300"
-                            aria-label="View source code"
-                          >
-                            <FontAwesomeIcon
-                              icon={faCode}
-                              className="text-white text-sm"
-                            />
-                          </a>
-                        )}
-                        {project.live_url && (
-                          <a
-                            href={project.live_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-primary-color/80 hover:bg-primary-color p-2 rounded-full transition-colors duration-300"
-                            aria-label="View live site"
-                          >
-                            <FontAwesomeIcon
-                              icon={faExternalLink}
-                              className="text-white text-sm"
-                            />
-                          </a>
-                        )}
+                >
+                  <div className="relative w-full h-[160px] sm:h-[180px] md:h-[200px] overflow-hidden">
+                    {!imageLoad[project.id] && (
+                      <div className="absolute inset-0 bg-gray-300 animate-pulse"></div>
+                    )}
+                    <img
+                      className="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+                      src={project.image}
+                      alt={project.name}
+                      loading="lazy"
+                      onLoad={() => handleImageLoad(project.id)}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+                      <div className="p-4 w-full">
+                        <div className="flex gap-2 justify-end">
+                          {project.github_url && (
+                            <a
+                              href={project.github_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="bg-background-color/80 hover:bg-background-color p-2 rounded-full transition-colors duration-300"
+                              aria-label="View source code"
+                            >
+                              <FontAwesomeIcon
+                                icon={faCode}
+                                className="text-white text-sm"
+                              />
+                            </a>
+                          )}
+                          {project.live_url && (
+                            <a
+                              href={project.live_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="bg-primary-color/80 hover:bg-primary-color p-2 rounded-full transition-colors duration-300"
+                              aria-label="View live site"
+                            >
+                              <FontAwesomeIcon
+                                icon={faExternalLink}
+                                className="text-white text-sm"
+                              />
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="px-4 py-4 flex-grow flex flex-col">
-                  <div className="flex justify-between items-start mb-2">
-                    <span className="text-[12px] text-primary-color font-medium px-2 py-0.5 bg-primary-color/10 rounded-full">
-                      {project.category}
-                    </span>
-                    {project.year && (
-                      <span className="text-[11px] text-gray-400">
-                        {project.year}
+                  <div className="px-4 py-4 flex-grow flex flex-col">
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-[12px] text-primary-color font-medium px-2 py-0.5 bg-primary-color/10 rounded-full">
+                        {project.category}
                       </span>
-                    )}
-                  </div>
+                      {project.year && (
+                        <span className="text-[11px] text-gray-400">
+                          {project.year}
+                        </span>
+                      )}
+                    </div>
 
-                  <h2
-                    className="text-[16px] sm:text-[18px] 
+                    <h2
+                      className="text-[16px] sm:text-[18px] 
                       leading-tight
                       font-medium text-white 
                       mb-2"
-                  >
-                    {project.name}
-                  </h2>
+                    >
+                      {project.name}
+                    </h2>
 
-                  {project.description && (
-                    <p className="text-[13px] sm:text-[14px] text-gray-300 mb-3 line-clamp-2">
-                      {project.description}
-                    </p>
-                  )}
+                    {project.description && (
+                      <p className="text-[13px] sm:text-[14px] text-gray-300 mb-3 line-clamp-2">
+                        {project.description}
+                      </p>
+                    )}
 
-                  {/* Tech Stack */}
-                  {project.technologies && (
-                    <div className="mt-auto pt-2">
-                      <div className="flex flex-wrap gap-1.5">
-                        {project.technologies.slice(0, 3).map((tech, index) => (
-                          <span
-                            key={index}
-                            className="text-[11px] px-1.5 py-0.5 bg-background-color rounded border border-border-color text-gray-300"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                        {project.technologies.length > 3 && (
-                          <span className="text-[11px] px-1.5 py-0.5 text-gray-400">
-                            +{project.technologies.length - 3}
-                          </span>
-                        )}
+                    {/* Tech Stack */}
+                    {project.technologies && (
+                      <div className="mt-auto pt-2">
+                        <div className="flex flex-wrap gap-1.5">
+                          {project.technologies
+                            .slice(0, 3)
+                            .map((tech, index) => (
+                              <span
+                                key={index}
+                                className="text-[11px] px-1.5 py-0.5 bg-background-color rounded border border-border-color text-gray-300"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          {project.technologies.length > 3 && (
+                            <span className="text-[11px] px-1.5 py-0.5 text-gray-400">
+                              +{project.technologies.length - 3}
+                            </span>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
-              </div>
+              </NotchMotion>
             ))}
           </div>
         ) : (
