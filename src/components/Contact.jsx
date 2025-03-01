@@ -21,32 +21,32 @@ const Contact = () => {
   const socialLinks = [
     {
       icon: <SiFacebook />,
-      url: "https://facebook.com/godfredentsie",
+      url: "http://facebook.com/godentsie",
       name: "Facebook",
     },
     {
       icon: <SiInstagram />,
-      url: "https://instagram.com/godfredentsie",
+      url: "https://www.instagram.com/godfred_0",
       name: "Instagram",
     },
     {
       icon: <FontAwesomeIcon icon={faXTwitter} />,
-      url: "https://x.com/godfredentsie",
+      url: "https://x.com/jaywebs_",
       name: "Twitter",
     },
     {
       icon: <FontAwesomeIcon icon={faGithub} />,
-      url: "https://github.com/godfredentsie",
+      url: "https://github.com/jayfaculty-design",
       name: "GitHub",
     },
     {
-      icon: <SiFiverr />,
-      url: "https://fiverr.com/godfredentsie",
-      name: "Fiverr",
+      icon: <SiUpwork />,
+      url: "https://www.upwork.com/freelancers/~010b25b2a5a595563d?mp_source=share",
+      name: "Upwork",
     },
     {
       icon: <FontAwesomeIcon icon={faLinkedin} />,
-      url: "https://linkedin.com/in/godfredentsie",
+      url: "https://www.linkedin.com/in/godfred-entsie-952a69223/",
       name: "LinkedIn",
     },
   ];

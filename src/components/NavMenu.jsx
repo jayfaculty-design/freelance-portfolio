@@ -16,6 +16,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext, useState, useEffect } from "react";
 import { NavLink } from "react-router";
 import { NavContext } from "../contexts/NavContext";
+import { delay } from "motion";
+import NotchMotion from "./NotchMotion";
 
 const NavMenu = () => {
   const { isOpen, setIsOpen } = useContext(NavContext);
@@ -139,27 +141,48 @@ const NavMenu = () => {
           {/* Social links */}
           <div className="flex items-center gap-3 sm:gap-4 mt-1 sm:mt-2">
             {[
-              { icon: faFacebook, href: "#", label: "Facebook" },
-              { icon: faXTwitter, href: "#", label: "Twitter" },
-              { icon: faLinkedinIn, href: "#", label: "LinkedIn" },
-              { icon: faGithub, href: "#", label: "GitHub" },
+              {
+                icon: faFacebook,
+                href: "http://facebook.com/godentsie",
+                label: "Facebook",
+                delay: 0.1,
+              },
+              {
+                icon: faXTwitter,
+                href: "https://x.com/jaywebs_",
+                label: "Twitter",
+                delay: 0.2,
+              },
+              {
+                icon: faLinkedinIn,
+                href: "https://www.linkedin.com/in/godfred-entsie-952a69223/",
+                label: "LinkedIn",
+                delay: 0.3,
+              },
+              {
+                icon: faGithub,
+                href: "https://github.com/jayfaculty-design",
+                label: "GitHub",
+                delay: 0.4,
+              },
             ].map((social, index) => (
-              <a
-                key={index}
-                className="text-[16px] sm:text-[18px] 
+              <NotchMotion key={index} type="bounce" delay={social.delay}>
+                <a
+                  className="text-[16px] sm:text-[18px] 
                           border border-border-color 
                           p-2 sm:p-[10px] 
                           rounded-[8px] sm:rounded-[10px]
                           hover:border-primary-color/50
                           hover:text-primary-color
                           transition-all duration-200"
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-              >
-                <FontAwesomeIcon icon={social.icon} />
-              </a>
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                >
+                  <FontAwesomeIcon icon={social.icon} />
+                </a>
+              </NotchMotion>
             ))}
           </div>
         </div>
