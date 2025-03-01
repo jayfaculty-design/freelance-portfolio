@@ -75,6 +75,13 @@ export const projects = [
   },
   {
     id: 4,
+    name: "Motion Mentality",
+    category: "Ecommerce",
+    image: "/motion.png",
+    live_url: "https://www.motionmentality.com/",
+  },
+  {
+    id: 5,
     name: "Coffe Shop",
     category: "Ecommerce",
     image: "/coffe-shop.png",
