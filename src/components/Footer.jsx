@@ -2,6 +2,7 @@ import { faFacebookMessenger } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import ScrollReveal from "./ScrollReveal";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -49,8 +50,8 @@ const Footer = () => {
             </p>
           </ScrollReveal>
           <ScrollReveal direction="up" delay={0.4} distance={20}>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="bg-primary-color 
                   border-t-2 border-b-3 sm:border-b-4 border-r-3 sm:border-r-4 border-l-2 
                   border-heading-color 
@@ -74,7 +75,7 @@ const Footer = () => {
                 icon={faFacebookMessenger}
                 className="text-[14px] sm:text-[15px] md:text-[16px]"
               />
-            </a>
+            </Link>
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={0.5} distance={15}>

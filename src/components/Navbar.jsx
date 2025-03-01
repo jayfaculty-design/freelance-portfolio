@@ -82,8 +82,8 @@ const Navbar = () => {
             ))}
           </div>
 
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="bg-primary-color 
                     border-t-2 border-b-3 border-r-3 border-l-2 border-heading-color 
                     flex items-center
@@ -96,7 +96,7 @@ const Navbar = () => {
                     hover:translate-y-[-2px] active:translate-y-[1px]"
           >
             Hire Me
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button - Only visible on small screens */}

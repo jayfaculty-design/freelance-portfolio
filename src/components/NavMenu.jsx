@@ -14,7 +14,7 @@ import {
 import { faContactBook } from "@fortawesome/free-solid-svg-icons/faContactBook";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext, useState, useEffect } from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { NavContext } from "../contexts/NavContext";
 import NotchMotion from "./NotchMotion";
 
@@ -242,8 +242,8 @@ const NavMenu = () => {
               </p>
             </div>
 
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               onClick={() => setIsOpen(false)}
               className="bg-primary-color 
                       border-t-2 border-b-4 border-r-4 border-l-2 border-heading-color 
@@ -265,7 +265,7 @@ const NavMenu = () => {
                       active:translate-y-[1px]"
             >
               Hire Me
-            </a>
+            </Link>
           </div>
         </div>
       </div>
