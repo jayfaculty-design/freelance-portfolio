@@ -238,7 +238,7 @@ const NavMenu = () => {
             <div className="flex flex-col gap-1">
               <p className="text-[12px] sm:text-[13px] text-gray-400">EMAIL:</p>
               <p className="text-[14px] sm:text-[15px] text-white font-medium">
-                hello@gentsie.com
+                gentsie1@gmail.com
               </p>
             </div>
 

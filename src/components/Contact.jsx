@@ -161,7 +161,7 @@ const Contact = () => {
                         Email
                       </h3>
                       <p className="text-[14px] text-gray-300 mb-1">
-                        hello@gentsie.com
+                        gentsie1@gmail.com
                       </p>
                       <p className="text-[12px] text-gray-400">
                         Response time: ~24 hours
