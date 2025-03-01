@@ -8,6 +8,7 @@ import React, { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import Portfolio from "./Portfolio";
 import PortfolioSection from "./Portfolio-Section";
+import ScrollReveal from "./ScrollReveal";
 
 const Home = () => {
   const [imageLoad, setImageLoad] = useState(false);
@@ -40,241 +41,312 @@ const Home = () => {
         }`}
       >
         {/* Profile Card - Left column on desktop, full width on mobile */}
-        <div
+        <ScrollReveal
+          direction={isMobile ? "up" : "left"}
+          delay={0.1}
+          distance={30}
           className={`
-          ${isMobile ? "" : "col-span-2 row-span-5"}
-          text-center flex flex-col gap-4 sm:gap-5 
-          items-center justify-center 
-          border border-card-background bg-card-background 
-          p-6 sm:p-8 lg:p-6 xl:p-8
-          rounded-[15px] sm:rounded-[20px]
-          h-full
-        `}
+            ${isMobile ? "" : "col-span-2 row-span-5"}
+          `}
         >
           <div
-            className="flex justify-center items-center 
-              w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] md:w-[220px] md:h-[220px] 
-              lg:w-[180px] lg:h-[180px] xl:w-[200px] xl:h-[200px] 2xl:w-[220px] 2xl:h-[220px]
-              p-2 bg-image-background rounded-full overflow-hidden relative
-              mx-auto"
+            className={`
+            text-center flex flex-col gap-4 sm:gap-5 
+            items-center justify-center 
+            border border-card-background bg-card-background 
+            p-6 sm:p-8 lg:p-6 xl:p-8
+            rounded-[15px] sm:rounded-[20px]
+            h-full
+          `}
           >
-            {!imageLoad && (
-              <div className="absolute inset-0 bg-gray-300 animate-pulse rounded-full"></div>
-            )}
-            <img
-              className="object-cover rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3
-                w-[90%] h-auto"
-              src="/avator.png"
-              alt="Godfred"
-              loading="lazy"
-              onLoad={() => setImageLoad(true)}
-            />
-          </div>
-
-          <h1 className="text-heading-color text-[24px] sm:text-[28px] md:text-[32px] lg:text-[26px] xl:text-[30px] font-medium leading-tight">
-            Godfred Entsie
-          </h1>
-
-          <p
-            className="leading-[24px] sm:leading-[28px] mt-0 mb-2 sm:mb-3 
-                      w-full max-w-[300px] lg:max-w-full 
-                      text-[14px] sm:text-[16px] lg:text-[15px] xl:text-[16px]"
-          >
-            I am a Full Stack Developer based in Accra, Ghana
-          </p>
-
-          <div
-            className="socials flex items-center justify-between 
-                        w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[280px] xl:max-w-[320px] 
-                        mx-auto gap-4"
-          >
-            {[
-              { icon: faFacebook, href: "#", label: "Facebook" },
-              { icon: faXTwitter, href: "#", label: "Twitter" },
-              { icon: faLinkedinIn, href: "#", label: "LinkedIn" },
-              { icon: faGithub, href: "#", label: "GitHub" },
-            ].map((social, index) => (
-              <a
-                key={index}
-                className="text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] 
-                        border border-border-color 
-                        p-2 sm:p-3 lg:p-2.5 xl:p-3
-                        rounded-[8px] sm:rounded-[10px]
-                        hover:bg-border-color hover:text-background-color 
-                        transition-colors duration-300
-                        flex-1"
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
+            <ScrollReveal direction="up" delay={0.2} distance={20}>
+              <div
+                className="flex justify-center items-center 
+                  w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] md:w-[220px] md:h-[220px] 
+                  lg:w-[180px] lg:h-[180px] xl:w-[200px] xl:h-[200px] 2xl:w-[220px] 2xl:h-[220px]
+                  p-2 bg-image-background rounded-full overflow-hidden relative
+                  mx-auto"
               >
-                <FontAwesomeIcon icon={social.icon} />
-              </a>
-            ))}
+                {!imageLoad && (
+                  <div className="absolute inset-0 bg-gray-300 animate-pulse rounded-full"></div>
+                )}
+                <img
+                  className="object-cover rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3
+                    w-[90%] h-auto"
+                  src="/avator.png"
+                  alt="Godfred"
+                  loading="lazy"
+                  onLoad={() => setImageLoad(true)}
+                />
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="up" delay={0.3} distance={20}>
+              <h1 className="text-heading-color text-[24px] sm:text-[28px] md:text-[32px] lg:text-[26px] xl:text-[30px] font-medium leading-tight">
+                Godfred Entsie
+              </h1>
+            </ScrollReveal>
+
+            <ScrollReveal direction="up" delay={0.4} distance={20}>
+              <p
+                className="leading-[24px] sm:leading-[28px] mt-0 mb-2 sm:mb-3 
+                          w-full max-w-[300px] lg:max-w-full 
+                          text-[14px] sm:text-[16px] lg:text-[15px] xl:text-[16px]"
+              >
+                I am a Full Stack Developer based in Accra, Ghana
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal direction="up" delay={0.5} distance={20}>
+              <div
+                className="socials flex items-center justify-between 
+                            w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[280px] xl:max-w-[320px] 
+                            mx-auto gap-4"
+              >
+                {[
+                  { icon: faFacebook, href: "#", label: "Facebook" },
+                  { icon: faXTwitter, href: "#", label: "Twitter" },
+                  { icon: faLinkedinIn, href: "#", label: "LinkedIn" },
+                  { icon: faGithub, href: "#", label: "GitHub" },
+                ].map((social, index) => (
+                  <a
+                    key={index}
+                    className="text-[16px] sm:text-[18px] lg:text-[16px] xl:text-[18px] 
+                            border border-border-color 
+                            p-2 sm:p-3 lg:p-2.5 xl:p-3
+                            rounded-[8px] sm:rounded-[10px]
+                            hover:bg-border-color hover:text-background-color 
+                            transition-colors duration-300
+                            flex-1"
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                  >
+                    <FontAwesomeIcon icon={social.icon} />
+                  </a>
+                ))}
+              </div>
+            </ScrollReveal>
+
+            {/* Contact information for desktop version */}
+            <ScrollReveal
+              direction="up"
+              delay={0.6}
+              distance={20}
+              className="w-full"
+            >
+              <div className="hidden lg:flex flex-col gap-4 mt-6 w-full">
+                <div className="flex flex-col gap-1 text-left">
+                  <p className="text-[12px] xl:text-[13px] text-gray-400">
+                    PHONE:
+                  </p>
+                  <p className="text-[14px] xl:text-[15px] text-white font-medium">
+                    +(233) 240-536-268
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-1 text-left">
+                  <p className="text-[12px] xl:text-[13px] text-gray-400">
+                    EMAIL:
+                  </p>
+                  <p className="text-[14px] xl:text-[15px] text-white font-medium">
+                    hello@gentsie.com
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-1 text-left">
+                  <p className="text-[12px] xl:text-[13px] text-gray-400">
+                    LOCATION:
+                  </p>
+                  <p className="text-[14px] xl:text-[15px] text-white font-medium">
+                    Accra, Ghana
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
-
-          {/* Contact information for desktop version */}
-          <div className="hidden lg:flex flex-col gap-4 mt-6 w-full">
-            <div className="flex flex-col gap-1 text-left">
-              <p className="text-[12px] xl:text-[13px] text-gray-400">PHONE:</p>
-              <p className="text-[14px] xl:text-[15px] text-white font-medium">
-                +(233) 240-536-268
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-1 text-left">
-              <p className="text-[12px] xl:text-[13px] text-gray-400">EMAIL:</p>
-              <p className="text-[14px] xl:text-[15px] text-white font-medium">
-                hello@gentsie.com
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-1 text-left">
-              <p className="text-[12px] xl:text-[13px] text-gray-400">
-                LOCATION:
-              </p>
-              <p className="text-[14px] xl:text-[15px] text-white font-medium">
-                Accra, Ghana
-              </p>
-            </div>
-          </div>
-        </div>
+        </ScrollReveal>
 
         {/* About Me Section - Top right on desktop, second on mobile */}
-        <div
+        <ScrollReveal
+          direction={isMobile ? "up" : "right"}
+          delay={isMobile ? 0.2 : 0.1}
+          distance={30}
           className={`
-          ${isMobile ? "" : "col-span-4 row-span-3"}
-          flex flex-col gap-3 sm:gap-4 md:gap-5 
-          border border-card-background bg-card-background 
-          p-5 sm:p-6 md:p-8 lg:p-10 
-          rounded-[15px] md:rounded-[20px]
-          h-full
-        `}
+            ${isMobile ? "" : "col-span-4 row-span-3"}
+          `}
         >
-          <div className="flex flex-col h-full">
-            <p className="leading-[24px] sm:leading-[28px] mt-0 mb-[0.5rem] sm:mb-[1rem] text-[14px] sm:text-[16px]">
-              Hi There!
-            </p>
-            <h2
-              className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[30px] 
-                        leading-[26px] sm:leading-[32px] md:leading-[36px] lg:leading-[40px] 
-                        mb-[10px] sm:mb-[15px] md:mb-[20px] 
-                        font-normal text-heading-color"
-            >
-              I'm Godfred Entsie, a Full Stack Developer building seamless,
-              user-focused web applications with clean, efficient code.
-            </h2>
-
-            <p className="text-[14px] sm:text-[15px] md:text-[16px] leading-[22px] sm:leading-[24px] md:leading-[26px] mb-4 sm:mb-6">
-              With over 5 years of experience in web development, I specialize
-              in creating responsive, high-performance applications using modern
-              technologies like React, Next.js, Node.js, and TypeScript. My
-              approach combines technical excellence with a deep understanding
-              of user experience design.
-            </p>
-
-            <p className="text-[14px] sm:text-[15px] md:text-[16px] leading-[22px] sm:leading-[24px] md:leading-[26px] mb-4 sm:mb-6">
-              I'm passionate about building solutions that solve real problems
-              and deliver measurable results for businesses and users alike.
-              Whether it's optimizing performance, implementing complex
-              features, or creating intuitive interfaces, I'm committed to
-              delivering exceptional quality.
-            </p>
-
-            <div className="mt-auto flex flex-wrap items-center gap-3 sm:gap-4">
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-light-green animate-pulse"></div>
-                <p className="text-[13px] sm:text-[14px] md:text-[16px]">
-                  Available for Freelancing
+          <div
+            className={`
+            flex flex-col gap-3 sm:gap-4 md:gap-5 
+            border border-card-background bg-card-background 
+            p-5 sm:p-6 md:p-8 lg:p-10 
+            rounded-[15px] md:rounded-[20px]
+            h-full
+          `}
+          >
+            <div className="flex flex-col h-full">
+              <ScrollReveal direction="up" delay={0.2} distance={20}>
+                <p className="leading-[24px] sm:leading-[28px] mt-0 mb-[0.5rem] sm:mb-[1rem] text-[14px] sm:text-[16px]">
+                  Hi There!
                 </p>
-              </div>
+              </ScrollReveal>
 
-              <a
-                href="/resume.pdf"
-                download
-                className="bg-primary-color 
-                        border-t-2 border-b-3 sm:border-b-4 border-r-3 sm:border-r-4 border-l-2 border-heading-color 
-                        flex items-center gap-1 sm:gap-2 ml-auto
-                        justify-center w-fit text-white cursor-pointer 
-                        text-[12px] sm:text-[13px] md:text-[14px] 
-                        font-bold leading-[18px] sm:leading-[20px] 
-                        overflow-visible rounded-[10px] sm:rounded-[12px] md:rounded-[15px] 
-                        text-center transition-all duration-300 
-                        px-[20px] sm:px-[26px] md:px-[32px] 
-                        py-2 sm:py-2.5 md:py-3
-                        hover:translate-y-[-2px] active:translate-y-[1px]"
+              <ScrollReveal direction="up" delay={0.3} distance={20}>
+                <h2
+                  className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[30px] 
+                            leading-[26px] sm:leading-[32px] md:leading-[36px] lg:leading-[40px] 
+                            mb-[10px] sm:mb-[15px] md:mb-[20px] 
+                            font-normal text-heading-color"
+                >
+                  I'm Godfred Entsie, a Full Stack Developer building seamless,
+                  user-focused web applications with clean, efficient code.
+                </h2>
+              </ScrollReveal>
+
+              <ScrollReveal direction="up" delay={0.4} distance={20}>
+                <p className="text-[14px] sm:text-[15px] md:text-[16px] leading-[22px] sm:leading-[24px] md:leading-[26px] mb-4 sm:mb-6">
+                  With over 5 years of experience in web development, I
+                  specialize in creating responsive, high-performance
+                  applications using modern technologies like React, Next.js,
+                  Node.js, and TypeScript. My approach combines technical
+                  excellence with a deep understanding of user experience
+                  design.
+                </p>
+              </ScrollReveal>
+
+              <ScrollReveal direction="up" delay={0.5} distance={20}>
+                <p className="text-[14px] sm:text-[15px] md:text-[16px] leading-[22px] sm:leading-[24px] md:leading-[26px] mb-4 sm:mb-6">
+                  I'm passionate about building solutions that solve real
+                  problems and deliver measurable results for businesses and
+                  users alike. Whether it's optimizing performance, implementing
+                  complex features, or creating intuitive interfaces, I'm
+                  committed to delivering exceptional quality.
+                </p>
+              </ScrollReveal>
+
+              <ScrollReveal
+                direction="up"
+                delay={0.6}
+                distance={20}
+                className="mt-auto"
               >
-                Download CV
-                <FontAwesomeIcon icon={faDownload} />
-              </a>
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-light-green animate-pulse"></div>
+                    <p className="text-[13px] sm:text-[14px] md:text-[16px]">
+                      Available for Freelancing
+                    </p>
+                  </div>
+
+                  <a
+                    href="/resume.pdf"
+                    download
+                    className="bg-primary-color 
+                            border-t-2 border-b-3 sm:border-b-4 border-r-3 sm:border-r-4 border-l-2 border-heading-color 
+                            flex items-center gap-1 sm:gap-2 ml-auto
+                            justify-center w-fit text-white cursor-pointer 
+                            text-[12px] sm:text-[13px] md:text-[14px] 
+                            font-bold leading-[18px] sm:leading-[20px] 
+                            overflow-visible rounded-[10px] sm:rounded-[12px] md:rounded-[15px] 
+                            text-center transition-all duration-300 
+                            px-[20px] sm:px-[26px] md:px-[32px] 
+                            py-2 sm:py-2.5 md:py-3
+                            hover:translate-y-[-2px] active:translate-y-[1px]"
+                  >
+                    Download CV
+                    <FontAwesomeIcon icon={faDownload} />
+                  </a>
+                </div>
+              </ScrollReveal>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Companies Section - Bottom right on desktop, third on mobile */}
-        <div
+        <ScrollReveal
+          direction={isMobile ? "up" : "right"}
+          delay={isMobile ? 0.3 : 0.2}
+          distance={30}
           className={`
-          ${isMobile ? "" : "col-span-4 row-span-2 col-start-3 row-start-4"}
-          flex flex-col gap-3 sm:gap-4 md:gap-5 
-          border border-card-background bg-card-background 
-          p-5 sm:p-7 md:p-8 lg:p-10 
-          rounded-[15px] md:rounded-[20px]
-          h-full
-        `}
+            ${isMobile ? "" : "col-span-4 row-span-2 col-start-3 row-start-4"}
+          `}
         >
-          <h2
-            className="mb-[5px] sm:mb-[8px] md:mb-[10px] 
-                      text-[18px] sm:text-[20px] md:text-[22px] 
-                      text-heading-color font-medium leading-[1.2]"
+          <div
+            className={`
+            flex flex-col gap-3 sm:gap-4 md:gap-5 
+            border border-card-background bg-card-background 
+            p-5 sm:p-7 md:p-8 lg:p-10 
+            rounded-[15px] md:rounded-[20px]
+            h-full
+          `}
           >
-            Companies I worked With
-          </h2>
+            <ScrollReveal direction="up" delay={0.2} distance={20}>
+              <h2
+                className="mb-[5px] sm:mb-[8px] md:mb-[10px] 
+                          text-[18px] sm:text-[20px] md:text-[22px] 
+                          text-heading-color font-medium leading-[1.2]"
+              >
+                Companies I worked With
+              </h2>
+            </ScrollReveal>
 
-          <div className="flex-grow flex flex-col justify-center">
-            <Marquee speed={40} gradientWidth={20} className="py-4">
-              <div className="flex items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12">
-                <div className="flex items-center gap-2 bg-card-background/50 px-4 py-2 rounded-lg">
-                  <p className="servmark text-lg sm:text-xl md:text-2xl font-medium">
-                    Servmark.ltd
-                  </p>
-                </div>
+            <ScrollReveal
+              direction="up"
+              delay={0.3}
+              distance={20}
+              className="flex-grow"
+            >
+              <div className="flex flex-col justify-center h-full">
+                <Marquee speed={40} gradientWidth={20} className="py-4">
+                  <div className="flex items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+                    <div className="flex items-center gap-2 bg-card-background/50 px-4 py-2 rounded-lg">
+                      <p className="servmark text-lg sm:text-xl md:text-2xl font-medium">
+                        Servmark.ltd
+                      </p>
+                    </div>
 
-                <div className="flex items-center gap-2 bg-card-background/50 px-4 py-2 rounded-lg">
-                  <img
-                    className="w-10 sm:w-12 md:w-16 lg:w-20"
-                    src="/visio.png"
-                    alt="visiosculpt labs"
-                    loading="lazy"
-                  />
-                </div>
+                    <div className="flex items-center gap-2 bg-card-background/50 px-4 py-2 rounded-lg">
+                      <img
+                        className="w-10 sm:w-12 md:w-16 lg:w-20"
+                        src="/visio.png"
+                        alt="visiosculpt labs"
+                        loading="lazy"
+                      />
+                    </div>
 
-                <div className="flex items-center gap-2 bg-card-background/50 px-4 py-2 rounded-lg">
-                  <p className="text-lg sm:text-xl md:text-2xl font-medium">
-                    Nanti
-                  </p>
-                </div>
+                    <div className="flex items-center gap-2 bg-card-background/50 px-4 py-2 rounded-lg">
+                      <p className="text-lg sm:text-xl md:text-2xl font-medium">
+                        Nanti
+                      </p>
+                    </div>
 
-                <div className="flex items-center gap-2 bg-card-background/50 px-4 py-2 rounded-lg">
-                  <p className="text-lg sm:text-xl md:text-2xl font-medium">
-                    TechFusion
-                  </p>
-                </div>
+                    <div className="flex items-center gap-2 bg-card-background/50 px-4 py-2 rounded-lg">
+                      <p className="text-lg sm:text-xl md:text-2xl font-medium">
+                        TechFusion
+                      </p>
+                    </div>
 
-                <div className="flex items-center gap-2 bg-card-background/50 px-4 py-2 rounded-lg">
-                  <p className="text-lg sm:text-xl md:text-2xl font-medium">
-                    WebSphere
-                  </p>
-                </div>
+                    <div className="flex items-center gap-2 bg-card-background/50 px-4 py-2 rounded-lg">
+                      <p className="text-lg sm:text-xl md:text-2xl font-medium">
+                        WebSphere
+                      </p>
+                    </div>
+                  </div>
+                </Marquee>
               </div>
-            </Marquee>
+            </ScrollReveal>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
 
       {/* Projects Section */}
-      <div>
-        <PortfolioSection />
-      </div>
+      <ScrollReveal direction="left" delay={isMobile ? 0.4 : 0.3} distance={30}>
+        <div>
+          <PortfolioSection />
+        </div>
+      </ScrollReveal>
     </div>
   );
 };
