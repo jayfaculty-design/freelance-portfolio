@@ -7,26 +7,28 @@ import { NavProvider } from "./contexts/NavContext";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Resume from "./components/Resume";
-
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import PageTransition from "./components/PageTransition";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <NavProvider>
+          <div></div>
           <Navbar />
           <NavMenu />
-          <Routes>
-            <Route path="/" index element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/resume" element={<Resume />} />
-
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+          <PageTransition>
+            <Routes>
+              <Route path="/" index element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/resume" element={<Resume />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </PageTransition>
           <Footer />
           <ScrollToTop />
         </NavProvider>

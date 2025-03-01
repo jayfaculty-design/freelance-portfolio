@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { testimonials } from "../data/data";
 import { Services } from "./Services";
 import NotchMotion from "./NotchMotion";
@@ -6,6 +6,10 @@ import ScrollReveal from "./ScrollReveal";
 
 const About = () => {
   const [imageLoad, setImageLoad] = useState({});
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleImageLoad = (id) => {
     setImageLoad((prev) => ({

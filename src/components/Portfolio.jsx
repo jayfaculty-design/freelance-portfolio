@@ -32,6 +32,7 @@ const Portfolio = () => {
 
   // Filter projects based on category and search term
   useEffect(() => {
+    window.scrollTo(0, 0);
     let filtered = projects;
 
     // Apply category filter

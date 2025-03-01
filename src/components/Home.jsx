@@ -16,6 +16,7 @@ const Home = () => {
 
   // Check if screen is mobile or desktop
   useEffect(() => {
+    window.scrollTo(0, 0);
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 1024); // lg breakpoint
     };
@@ -341,12 +342,14 @@ const Home = () => {
         </ScrollReveal>
       </div>
 
-      {/* Projects Section */}
-      <ScrollReveal direction="left" delay={isMobile ? 0.4 : 0.3} distance={30}>
-        <div>
-          <PortfolioSection />
-        </div>
-      </ScrollReveal>
+      {/* Projects Section - Added margin-top for desktop */}
+      <div className={`${isMobile ? "mt-5" : "mt-20"}`}>
+        <ScrollReveal direction="up" delay={isMobile ? 0.4 : 0.3} distance={30}>
+          <div>
+            <PortfolioSection />
+          </div>
+        </ScrollReveal>
+      </div>
     </div>
   );
 };
