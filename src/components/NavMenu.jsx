@@ -16,7 +16,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext, useState, useEffect } from "react";
 import { NavLink } from "react-router";
 import { NavContext } from "../contexts/NavContext";
-import { delay } from "motion";
 import NotchMotion from "./NotchMotion";
 
 const NavMenu = () => {
