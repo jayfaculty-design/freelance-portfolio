@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const formSchema = z.object({
   full_name: z.string().min(1, "Full name is required"),
@@ -25,6 +26,7 @@ const formSchema = z.object({
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -38,16 +40,42 @@ export default function ContactForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
+    setIsSuccess(false);
 
     try {
-      // Simulate API call with a delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const serviceId = "service_1s94g2b";
+      const templateId = "template_l8t1daq";
+      const publicKey = "mTEEK7QTvCItmAtSg";
 
-      console.log(values);
-      toast.success("Message sent successfully!", {
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      form.reset(); // Reset form after successful submission
+      const templateParams = {
+        to_email: "izfaculty12@gmail.com",
+        from_name: values.full_name,
+        from_email: values.email,
+        subject: values.subject,
+        message: values.message,
+      };
+
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      if (response.status === 200) {
+        setIsSuccess(true);
+        toast.success("Message sent successfully!", {
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        form.reset(); // Reset form after successful submission
+
+        // Reset success message after 3 seconds
+        setTimeout(() => {
+          setIsSuccess(false);
+        }, 3000);
+      } else {
+        throw new Error("Failed to send email");
+      }
     } catch (error) {
       console.error("Form submission error", error);
       toast.error("Failed to submit the form", {
@@ -155,11 +183,15 @@ export default function ContactForm() {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full sm:w-auto min-w-[150px] h-10 sm:h-11 
-                      bg-primary-color hover:bg-primary-color/90 
+            className={`w-full sm:w-auto min-w-[150px] h-10 sm:h-11 
+                      ${
+                        isSuccess
+                          ? "bg-green-600 hover:bg-green-700"
+                          : "bg-primary-color hover:bg-primary-color/90"
+                      } 
                       text-[14px] sm:text-[15px] font-medium 
                       transition-all duration-300
-                      flex items-center justify-center gap-2"
+                      flex items-center justify-center gap-2`}
           >
             {isSubmitting ? (
               <>
@@ -184,6 +216,24 @@ export default function ContactForm() {
                   ></path>
                 </svg>
                 Sending...
+              </>
+            ) : isSuccess ? (
+              <>
+                <svg
+                  className="w-4 h-4 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Email Sent!
               </>
             ) : (
               "Send Message"
