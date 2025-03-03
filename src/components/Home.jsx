@@ -74,7 +74,7 @@ const Home = () => {
                 <img
                   className="object-cover rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3
                     w-[90%] h-auto"
-                  src="/avator.png"
+                  src="/avator.webp"
                   alt="Godfred"
                   loading="lazy"
                   onLoad={() => setImageLoad(true)}
