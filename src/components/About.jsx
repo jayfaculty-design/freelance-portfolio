@@ -111,9 +111,9 @@ const About = () => {
           >
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 md:gap-6 w-full max-w-[95%] sm:max-w-[90%] md:max-w-[85%] lg:max-w-[80%] mt-2">
               {[
-                { number: "3", label: "Years Of Exp.", suffix: "+" },
+                { number: "2", label: "Years Of Exp.", suffix: "+" },
                 { number: "12", label: "Work Hours", suffix: "k+" },
-                { number: "50", label: "Project Completions", suffix: "+" },
+                { number: "20", label: "Project Completions", suffix: "+" },
               ].map((stat, index) => (
                 <ScrollReveal
                   key={index}
