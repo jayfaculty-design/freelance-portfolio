@@ -81,7 +81,7 @@ const About = () => {
                 </span>{" "}
                 with over{" "}
                 <span className="font-medium text-heading-color">
-                  5 years of experience
+                  2 years of experience
                 </span>
                 . I started in my childhood room and honed my skills at renowned
                 tech agencies, building seamless, high-performing web
