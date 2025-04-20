@@ -61,31 +61,31 @@ export const projects = [
   },
   {
     id: 2,
-    name: "IP Addres Tracker",
-    category: "Web Development",
-    image: "/ip-tracker.webp",
-    live_url: "https://jay-ip-tracker.vercel.app/",
+    name: "Kobby Wears",
+    category: "Ecommerce",
+    image: "/kobbywears.webp",
+    live_url: "https://kobby-wears.vercel.app/",
   },
   {
     id: 3,
+    name: "Servmark Landing Page",
+    category: "Web Development",
+    image: "/servmark.webp",
+    live_url: "https://svm-test.vercel.app/",
+  },
+  {
+    id: 4,
     name: "Cafe De Boba",
     category: "Ecommerce",
     image: "/Cafe.webp",
     live_url: "http://www.cafedeboba.com/",
   },
   {
-    id: 4,
+    id: 5,
     name: "Motion Mentality",
     category: "Ecommerce",
     image: "/motion.webp",
     live_url: "https://www.motionmentality.com/",
-  },
-  {
-    id: 5,
-    name: "Coffe Shop",
-    category: "Ecommerce",
-    image: "/coffe-shop.webp",
-    live_url: "http://coffee-shop-opal.vercel.app/",
   },
 ];
 
