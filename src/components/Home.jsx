@@ -65,7 +65,7 @@ const Home = () => {
                 className="flex justify-center items-center 
                   w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] md:w-[220px] md:h-[220px] 
                   lg:w-[180px] lg:h-[180px] xl:w-[200px] xl:h-[200px] 2xl:w-[220px] 2xl:h-[220px]
-                  p-2 bg-image-background rounded-full overflow-hidden relative
+                  p-2 bg-[#9e9b96] rounded-full overflow-hidden relative
                   mx-auto"
               >
                 {!imageLoad && (
