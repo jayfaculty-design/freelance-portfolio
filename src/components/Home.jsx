@@ -224,7 +224,7 @@ const Home = () => {
 
               <ScrollReveal direction="up" delay={0.4} distance={20}>
                 <p className="text-[14px] sm:text-[15px] md:text-[16px] leading-[22px] sm:leading-[24px] md:leading-[26px] mb-4 sm:mb-6">
-                  With over 5 years of experience in web development, I
+                  With over 2 years of experience in web development, I
                   specialize in creating responsive, high-performance
                   applications using modern technologies like React, Next.js,
                   Node.js, and TypeScript. My approach combines technical
